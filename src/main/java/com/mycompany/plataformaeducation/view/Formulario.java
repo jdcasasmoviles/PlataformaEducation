@@ -88,7 +88,6 @@ public class Formulario extends javax.swing.JFrame {
         btnReporte.setBackground(new java.awt.Color(74, 150, 44));
         btnReporte.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnReporte.setForeground(new java.awt.Color(255, 255, 255));
-        btnReporte.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/plataformaeducation/view/excel32px.png"))); // NOI18N
         btnReporte.setText("Repore");
         btnReporte.setBorderPainted(false);
         btnReporte.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -106,9 +105,9 @@ public class Formulario extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(138, 138, 138)
-                        .addComponent(btnReporte, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(104, 104, 104)
+                        .addGap(147, 147, 147)
+                        .addComponent(btnReporte, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(87, 87, 87)
                         .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
@@ -123,7 +122,7 @@ public class Formulario extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnReporte))
+                    .addComponent(btnReporte, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
@@ -207,7 +206,6 @@ public class Formulario extends javax.swing.JFrame {
         txtEstiloAprender.setEnabled(false);
 
         btnActividad.setForeground(new java.awt.Color(0, 102, 153));
-        btnActividad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/plataformaeducation/view/editar.png"))); // NOI18N
         btnActividad.setText("VER ACTIVIDAD");
         btnActividad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
