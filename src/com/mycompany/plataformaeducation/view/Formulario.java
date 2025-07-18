@@ -69,14 +69,15 @@ public class Formulario extends javax.swing.JFrame {
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 102));
         jLabel6.setText("ACCIONES");
 
         btnSalir.setBackground(new java.awt.Color(211, 47, 47));
         btnSalir.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnSalir.setForeground(new java.awt.Color(255, 255, 255));
-        btnSalir.setText("Eliminar");
+        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/eliminar.png"))); // NOI18N
+        btnSalir.setText("Cerrar");
         btnSalir.setBorderPainted(false);
         btnSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -88,7 +89,8 @@ public class Formulario extends javax.swing.JFrame {
         btnReporte.setBackground(new java.awt.Color(74, 150, 44));
         btnReporte.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnReporte.setForeground(new java.awt.Color(255, 255, 255));
-        btnReporte.setText("Repore");
+        btnReporte.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/excel24px.png"))); // NOI18N
+        btnReporte.setText("Reporte");
         btnReporte.setBorderPainted(false);
         btnReporte.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnReporte.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
@@ -128,12 +130,14 @@ public class Formulario extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(102, 0, 204));
         jLabel1.setText("SISTEMA DE RECOMENDACIÓN DE CONTENIDOS EDUCATIVOS");
 
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel8.setText("USUARIO");
 
+        txtUsuario.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         txtUsuario.setEnabled(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -150,7 +154,7 @@ public class Formulario extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(132, 132, 132)
                         .addComponent(jLabel1)))
-                .addContainerGap(134, Short.MAX_VALUE))
+                .addContainerGap(82, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -166,16 +170,12 @@ public class Formulario extends javax.swing.JFrame {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 102));
         jLabel5.setText("EVALUACIÓN DE RESULTADOS");
 
         tablaResultados.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
                 {null, null, null, null, null},
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -191,7 +191,7 @@ public class Formulario extends javax.swing.JFrame {
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 102));
         jLabel4.setText("ANALISIS");
 
@@ -199,13 +199,16 @@ public class Formulario extends javax.swing.JFrame {
         txtResultados.setRows(5);
         jScrollPane2.setViewportView(txtResultados);
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 0, 102));
         jLabel9.setText("ESTILO DE APRENDIZAJE");
 
+        txtEstiloAprender.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         txtEstiloAprender.setEnabled(false);
 
+        btnActividad.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnActividad.setForeground(new java.awt.Color(0, 102, 153));
+        btnActividad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/editar.png"))); // NOI18N
         btnActividad.setText("VER ACTIVIDAD");
         btnActividad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -213,8 +216,10 @@ public class Formulario extends javax.swing.JFrame {
             }
         });
 
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel10.setText("PUNTAJE");
 
+        txtPuntaje.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         txtPuntaje.setEnabled(false);
         txtPuntaje.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -266,8 +271,13 @@ public class Formulario extends javax.swing.JFrame {
                 .addGap(0, 12, Short.MAX_VALUE))
         );
 
-        btnVerResultados.setText("VER RESULTTADO");
-        btnVerResultados.setActionCommand("VER RESULTADOS");
+        btnVerResultados.setBackground(new java.awt.Color(0, 102, 153));
+        btnVerResultados.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnVerResultados.setForeground(new java.awt.Color(255, 255, 255));
+        btnVerResultados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/resul.png"))); // NOI18N
+        btnVerResultados.setText("VER RESULTADO");
+        btnVerResultados.setBorderPainted(false);
+        btnVerResultados.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnVerResultados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVerResultadosActionPerformed(evt);
@@ -288,8 +298,8 @@ public class Formulario extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnVerResultados)
-                                .addGap(148, 148, 148)))))
+                                .addComponent(btnVerResultados, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(91, 91, 91)))))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -298,12 +308,12 @@ public class Formulario extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
-                    .addComponent(btnVerResultados))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                    .addComponent(btnVerResultados, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -315,9 +325,9 @@ public class Formulario extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -326,28 +336,14 @@ public class Formulario extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(51, 51, 51)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnVerResultadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerResultadosActionPerformed
-        // TODO add your handling code here:
-        // Paso 6: Evaluar resultados
-        Resultado resultado = Operaciones.evaluarResultados(estudiante, Integer.parseInt(txtPuntaje.getText()), actividad.size());
-      int fila=0;
-      tablaResultados.setValueAt(resultado.getPorcentaje(), fila, 0);
-      tablaResultados.setValueAt(resultado.getPuntuacion(), fila, 1);
-      tablaResultados.setValueAt(resultado.getTotalPreguntas(), fila, 2);
-      tablaResultados.setValueAt(resultado.getDescripcion(), fila, 3);
-      tablaResultados.setValueAt(resultado.getResultado(), fila,4);
-         // Paso 7: Guardar progreso
-         Operaciones.guardarProgreso(estudiante);
-    }//GEN-LAST:event_btnVerResultadosActionPerformed
 
     private void btnActividadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActividadActionPerformed
         // TODO add your handling code here:
@@ -372,6 +368,19 @@ public class Formulario extends javax.swing.JFrame {
         dialogoReporte.setVisible(true);
         procesaDataUsuario(txtUsuario.getText().trim());
     }//GEN-LAST:event_btnReporteActionPerformed
+
+    private void btnVerResultadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerResultadosActionPerformed
+               // Paso 6: Evaluar resultados
+        Resultado resultado = Operaciones.evaluarResultados(estudiante, Integer.parseInt(txtPuntaje.getText()), actividad.size());
+      int fila=0;
+      tablaResultados.setValueAt(resultado.getPorcentaje(), fila, 0);
+      tablaResultados.setValueAt(resultado.getPuntuacion(), fila, 1);
+      tablaResultados.setValueAt(resultado.getTotalPreguntas(), fila, 2);
+      tablaResultados.setValueAt(resultado.getDescripcion(), fila, 3);
+      tablaResultados.setValueAt(resultado.getResultado(), fila,4);
+         // Paso 7: Guardar progreso
+         Operaciones.guardarProgreso(estudiante);
+    }//GEN-LAST:event_btnVerResultadosActionPerformed
 
 
 
