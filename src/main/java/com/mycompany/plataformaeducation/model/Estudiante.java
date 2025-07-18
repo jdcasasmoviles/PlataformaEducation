@@ -25,6 +25,9 @@ public class Estudiante {
             this.nivel = nivel;
             this.historial = new HashMap<>();
         }
+        
+        public Estudiante() {
+        }
 
         public void agregarResultado(String materia, int puntuacion) {
             historial.put(materia, puntuacion);

@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 import com.mycompany.plataformaeducation.model.Pregunta;
 import com.mycompany.plataformaeducation.model.Estudiante;
+import com.mycompany.plataformaeducation.model.Resultado;
 import com.mycompany.plataformaeducation.view.DialogoModal;
 import java.util.concurrent.atomic.AtomicInteger;
 import javax.swing.JOptionPane;
@@ -36,8 +37,9 @@ public class Operaciones {
         System.out.printf("Promedio general: %.1f%%\n", promedio);
         resultado=resultado+"\nPromedio general: "+promedio;
         estudiante.setDesempenoGeneral(promedio);
-        txtResultados.setText(resultado);    
-        txtResultados.setEnabled(false); //para que la caja de texto sea de solo lectura
+        txtResultados.setText(resultado);  
+         txtResultados.setEditable(false);
+      
     }
 
     public static void detectarEstiloAprendizaje(Estudiante estudiante,JTextField txtEstiloAprender) {
@@ -65,13 +67,22 @@ public class Operaciones {
         // Simulamos la selección de preguntas basadas en el nivel y estilo
         List<Pregunta> actividad = new ArrayList<>();
         
-        if (estudiante.getNivel().equals("Nivel Básico")) {
+        if (estudiante.getNivel().trim().equals("Nivel Básico")) {
             actividad.add(new Pregunta("¿Cuánto es 2 + 2?", "4", "Aritmética básica"));
             actividad.add(new Pregunta("¿Qué forma tiene una pelota de fútbol?", "Esfera", "Geometría básica"));
-        } else {
+        } 
+        else if (estudiante.getNivel().trim().equals("Nivel Intermedio")) {
             actividad.add(new Pregunta("Resuelve para x: 2x + 5 = 15", "5", "Álgebra básica"));
-            actividad.add(new Pregunta("¿Cuál es la capital de Francia?", "París", "Geografía"));
+            actividad.add(new Pregunta("¿Cuál es la capital de Peru?", "Lima", "Geografía"));
             actividad.add(new Pregunta("¿Qué gas necesitan las plantas para la fotosíntesis?", "CO2", "Ciencias"));
+       } else {
+            actividad.add(new Pregunta("Resuelve para x: 3x - 5 = 6x - 23", "6", "Álgebra básica"));
+            actividad.add(new Pregunta("¿Cuál es la capital de Ecuador?", "Quito", "Geografía"));
+            actividad.add(new Pregunta("¿Qué tipo de animal es una rana?", "Anfibio", "Ciencias"));
+            actividad.add(new Pregunta("Resuelve para x: 2x + 5 = 15", "5", "Álgebra básica"));
+            actividad.add(new Pregunta("¿Cuál es el continente más grande del mundo?", "Asia", "Geografía"));
+            actividad.add(new Pregunta("¿Cuál es el cuarto planeta?", "Marte", "Ciencias"));
+   
         }
         
         System.out.println("Actividad personalizada creada con " + actividad.size() + " preguntas.");
@@ -108,13 +119,13 @@ public class Operaciones {
         
         if (respuesta.equalsIgnoreCase(pregunta.getRespuestaCorrecta())) {
             System.out.println("¡Correcto!");
-            JOptionPane.showMessageDialog(null, "¡Correcto!", "Buena", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "¡Correcto!", "BUENA", JOptionPane.INFORMATION_MESSAGE);
             puntuacion.incrementAndGet();  // Incrementa la puntuación atómicamente
         } else {
             System.out.println("Incorrecto. La respuesta correcta es: " + pregunta.getRespuestaCorrecta());
             JOptionPane.showMessageDialog(null, 
                 "Incorrecto. La respuesta correcta es: " + pregunta.getRespuestaCorrecta(), 
-                "Error", JOptionPane.WARNING_MESSAGE);
+                "ERROR", JOptionPane.WARNING_MESSAGE);
         }
         
         preguntaModal.dispose();  // Cierra el modal actual
@@ -124,31 +135,41 @@ public class Operaciones {
     preguntaModal.setVisible(true);
 }
 
-    public static void evaluarResultados(Estudiante estudiante, int puntuacion, int totalPreguntas) {
+    public static Resultado evaluarResultados(Estudiante estudiante, int puntuacion, int totalPreguntas) {
         System.out.println("\n=== EVALUACIÓN DE RESULTADOS ===");
         double porcentaje = (double) puntuacion / totalPreguntas * 100;
         System.out.printf("Puntuación obtenida: %.1f%% (%d/%d)\n", porcentaje, puntuacion, totalPreguntas);
         
+        String descripcion="";
+        String resultado="";
         if (porcentaje >= 70) {
             System.out.println("¡Felicidades! Puedes avanzar al siguiente nivel.");
+            descripcion="¡Felicidades!";
             // Simulamos el avance de nivel
             String nuevoNivel = "Nivel " + 
                 (estudiante.getNivel().contains("Básico") ? "Intermedio" : 
                  estudiante.getNivel().contains("Intermedio") ? "Avanzado" : "Experto");
             estudiante.setNivel(nuevoNivel);
             System.out.println("Nuevo nivel: " + nuevoNivel);
+            resultado="Nuevo " + nuevoNivel;
         } else {
             System.out.println("Puntuación insuficiente. Iniciando refuerzo de contenido...");
+            descripcion="Puntuación insuficiente.";
             // Simulamos contenido de refuerzo
             System.out.println("Mostrando material adicional sobre los temas con dificultad...");
+            resultado="Necesita contenido de refuerzo.";
+            estudiante.setNivel("Básico");
             // En una implementación real, aquí se seleccionaría contenido específico
         }
+        estudiante.setDesempenoGeneral(porcentaje);
+        return new Resultado(resultado,  descripcion, porcentaje, puntuacion, totalPreguntas);
     }
 
     public static void guardarProgreso(Estudiante estudiante) {
         System.out.println("\n=== GUARDANDO PROGRESO ===");
         // En una implementación real, esto guardaría en una base de datos
         System.out.println("Progreso de " + estudiante.getNombre() + " guardado exitosamente.");
+        JOptionPane.showMessageDialog(null,"Progreso de "+estudiante.getNombre() + " Guardado exitosamente.","=== GUARDANDO PROGRESO ===", JOptionPane.INFORMATION_MESSAGE);
     }
 
     public static void generarReporte(Estudiante estudiante) {
