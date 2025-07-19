@@ -7,8 +7,7 @@ package com.mycompany.plataformaeducation.view;
 import javax.swing.*;
 import java.awt.*;
 import com.mycompany.plataformaeducation.model.Pregunta;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+
 
 public class DialogoModal extends JDialog {
     private JTextField txtRespuesta;
@@ -17,7 +16,7 @@ public class DialogoModal extends JDialog {
 
     public DialogoModal(Pregunta pregunta, int indice) {
         // Configuración básica del diálogo
-        setTitle("Pregunta " + (indice + 1));
+        setTitle("Responde la pregunta " + (indice + 1));
         setLayout(new BorderLayout(10, 10));
         setSize(500, 300);
         setLocationRelativeTo(null); // Centrar en pantalla
