@@ -7,7 +7,7 @@ package com.mycompany.plataformaeducation;
 import javax.swing.*;
 import java.awt.*;
 
-    class FondoPanel extends JPanel {
+    public class FondoPanel extends JPanel {
         private Image imagen;
 
         @Override

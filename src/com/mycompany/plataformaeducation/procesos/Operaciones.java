@@ -68,15 +68,15 @@ public class Operaciones {
         List<Pregunta> actividad = new ArrayList<>();
         
         if (estudiante.getNivel().trim().equals("Nivel Básico")) {
-            actividad.add(new Pregunta("¿Cuánto es 2 + 2?", "4", "Aritmética básica"));
+            actividad.add(new Pregunta("¿Cuánto es 2 + 2? De la respuesta en valor numerico", "4", "Aritmética básica"));
             actividad.add(new Pregunta("¿Qué forma tiene una pelota de fútbol?", "Esfera", "Geometría básica"));
         } 
         else if (estudiante.getNivel().trim().equals("Nivel Intermedio")) {
-            actividad.add(new Pregunta("Resuelve para x: 2x + 5 = 15", "5", "Álgebra básica"));
+            actividad.add(new Pregunta("Resuelve para x: 2x + 5 = 15 De la respuesta en valor numerico", "5", "Álgebra básica"));
             actividad.add(new Pregunta("¿Cuál es la capital de Peru?", "Lima", "Geografía"));
             actividad.add(new Pregunta("¿Qué gas necesitan las plantas para la fotosíntesis?", "CO2", "Ciencias"));
        } else {
-            actividad.add(new Pregunta("Resuelve para x: 3x - 5 = 6x - 23", "6", "Álgebra básica"));
+            actividad.add(new Pregunta("Resuelve para x: 3x - 5 = 6x - 23 . De la respuesta en valor numerico", "6", "Álgebra básica"));
             actividad.add(new Pregunta("¿Cuál es la capital de Ecuador?", "Quito", "Geografía"));
             actividad.add(new Pregunta("¿Qué tipo de animal es una rana?", "Anfibio", "Ciencias"));
             actividad.add(new Pregunta("Resuelve para x: 2x + 5 = 15", "5", "Álgebra básica"));

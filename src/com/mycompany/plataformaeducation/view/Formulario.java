@@ -359,6 +359,8 @@ public class Formulario extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
