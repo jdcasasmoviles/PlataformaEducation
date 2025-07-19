@@ -225,8 +225,8 @@ public class Principal extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-                txtUsuario.setText("alumno1");
-        txtPassword.setText("admin");
+              //  txtUsuario.setText("alumno2");
+       // txtPassword.setText("bajo");
         // Paso 1: AutenticaciÃ³n
        Boolean acceso=Inicio.autenticarUsuario(txtUsuario.getText().trim(), txtPassword.getText().trim());
        if(acceso){
@@ -236,8 +236,8 @@ public class Principal extends javax.swing.JFrame {
                      Formulario formulario=new Formulario(txtUsuario.getText().trim());
                     formulario.setVisible(true);
        }else{
-           JOptionPane.showMessageDialog(null, "ERROR...","Validacion de datos",
-              JOptionPane.ERROR);
+           JOptionPane.showMessageDialog(null, "CREDENCIALES...Incorrectas","Validacion de datos",
+              JOptionPane.WARNING_MESSAGE);
               txtPassword.requestFocus();
        }
     }//GEN-LAST:event_jButton2ActionPerformed

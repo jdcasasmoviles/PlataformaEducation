@@ -10,6 +10,7 @@ import com.mycompany.plataformaeducation.model.Pregunta;
 import com.mycompany.plataformaeducation.model.Resultado;
 import com.mycompany.plataformaeducation.procesos.Inicio;
 import com.mycompany.plataformaeducation.procesos.Operaciones;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -23,11 +24,13 @@ public class Formulario extends javax.swing.JFrame {
      */
      List<Pregunta> actividad ;
      Estudiante estudiante;
+     List<Resultado> listaResultado= new ArrayList<>();
      
     public Formulario(String usuario) {
         initComponents();
         txtUsuario.setText(usuario);
         txtUsuario.setEditable(false);
+        btnVerResultados.setVisible(false);
         
          System.out.println("\nAutenticación exitosa. Bienvenido, " + usuario + "!");
          procesaDataUsuario(usuario);
@@ -198,6 +201,10 @@ public class Formulario extends javax.swing.JFrame {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
                 {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
                 {null, null, null, null, null}
             },
             new String [] {
@@ -359,8 +366,6 @@ public class Formulario extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -368,6 +373,7 @@ public class Formulario extends javax.swing.JFrame {
         // TODO add your handling code here:
         // Paso 5: Presentar actividad
             txtPuntaje.setText(String.valueOf(Operaciones.presentarActividad(actividad)));
+            btnVerResultados.setVisible(true);
     }//GEN-LAST:event_btnActividadActionPerformed
 
     private void txtPuntajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPuntajeActionPerformed
@@ -385,15 +391,27 @@ public class Formulario extends javax.swing.JFrame {
 
     private void btnVerResultadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerResultadosActionPerformed
                // Paso 6: Evaluar resultados
-        Resultado resultado = Operaciones.evaluarResultados(estudiante, Integer.parseInt(txtPuntaje.getText()), actividad.size());
-      int fila=0;
-      tablaResultados.setValueAt(resultado.getPorcentaje(), fila, 0);
-      tablaResultados.setValueAt(resultado.getPuntuacion(), fila, 1);
-      tablaResultados.setValueAt(resultado.getTotalPreguntas(), fila, 2);
-      tablaResultados.setValueAt(resultado.getDescripcion(), fila, 3);
-      tablaResultados.setValueAt(resultado.getResultado(), fila,4);
+
+         try{
+      Resultado resultado = Operaciones.evaluarResultados(estudiante, Integer.parseInt(txtPuntaje.getText()), actividad.size());
+      listaResultado.add(resultado);
+    int fila=0;
+    for(int i=0;i<listaResultado.size();i++){
+      tablaResultados.setValueAt(listaResultado.get(i).getPorcentaje(), fila, 0);
+      tablaResultados.setValueAt(listaResultado.get(i).getPuntuacion(), fila, 1);
+      tablaResultados.setValueAt(listaResultado.get(i).getTotalPreguntas(), fila, 2);
+      tablaResultados.setValueAt(listaResultado.get(i).getDescripcion(), fila, 3);
+      tablaResultados.setValueAt(listaResultado.get(i).getResultado(), fila,4); 
+      fila++;
+    }
+    btnVerResultados.setVisible(false);
          // Paso 7: Guardar progreso
          Operaciones.guardarProgreso(estudiante);
+         
+         }catch(Exception e){
+             System.out.println("Boton resulttado Exception");
+         }
+         
     }//GEN-LAST:event_btnVerResultadosActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
